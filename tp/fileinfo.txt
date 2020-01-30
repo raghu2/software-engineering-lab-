@@ -1,0 +1,7 @@
+18mcmt01 abc hyderabad 8 9
+18mcmt02 bcd secun 6 7
+18mcmt03 cde telangana 7 8
+18mcmt04 def andhra 6 6
+18mcmt05 efg tamilnadu 8 7
+18mcmt08 asdf asdfgh 2 3 2.000000 70
+18mcmt12 hyd sedc 3 3 3.000000 70

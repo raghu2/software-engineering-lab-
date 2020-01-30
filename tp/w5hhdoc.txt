@@ -1,0 +1,53 @@
+ Important info:
+
+	Please set the tab space to 8 spaces in the PC for best view.
+
+ Problem Statement:
+
+         1.Prepare a structure containing diffrerent information fields about some students like roll number, name, address, subjects and their marks along
+           with the total marks and result which should be stored in a file.
+         2.Any new record should be stored and only its marks and result along with grade should be calculated in a file.
+
+ W5HH style of approach:
+
+         Why is the system being developed?
+                 To make easy use of the software in areas related to academics which stores a lot of records and their information for easy processing.
+
+         What will be done?
+                 Storing the records in a file and accessing the records based on the queries related to roll number and grades.
+
+         When will it be accomplished?
+                 Estimated time : 3 day
+
+         Who is responsible?
+                 T.Raghu Bharadwaj(18mcmt03) of M.Tech CS batch of 2020, University of Hyderabad.
+
+         Where are they organisationally located?
+                 Developers in the organisation
+
+         How will the job be done technically and managerially?
+                 Structure is to be used and functions which act as an interface between the structure into which the information is to be entered and a
+                 file, the final storage location and using some functions which help us in the queries related to any field in the information records.
+
+         How much of each resource is needed?
+                 Storage : 1KB(for program as well as file and documentation)
+                 Hardware and Software : A general purpose PC with a C program compiler
+
+ Approach to the solution:
+
+         1.Make a structure (info[10]) which should contain different fields (roll number(char[10]), name(char[10]), address(char[20]), subject1 marks(int), subject2 marks(int), average marks(float), 	   grade(char).
+         2.Open a file and copy all the information of the structure(info[10]) into the file and calculating the average marks and grade at runtime.
+         3.Any new record that should be stored in the file will automatically be stored calculating the result and grade.
+         4.Query with respect to file for fields roll number and grade should be arrived at a solution based on the information in the file.
+
+Different functions used in the file with respect to header files:
+
+Type		Function	Header			Input form	Output form
+
+User-defined	avgresult()	resultcalc.h		int,int		float
+User-defined	graderesult()	gradecalc.h		float		character
+User-defined	roll()		rollquery.h		String		Updated value/Details
+User-defined	display()	displaystruct.h		------		File Info	
+Pre-defined	strcmp()	string.h		Two strings	true/false
+	
+        

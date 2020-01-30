@@ -1,0 +1,77 @@
+
+ABSTRACT:
+Emotion being a subjective thing, leveraging knowledge and science behind labeled data and extracting the components that constitute it, has been a challenging problem in the industry for many years. With the evolution of deep learning in computer vision, emotion recognition has become a widely-tackled research problem. In this work, we propose an independent method for this very task. This method is an 8-layer convolutional neural network (CNN) and the results show that with more fine-tuning and depth, our CNN model can outperform the state-of-the-art methods for emotion recognition. We also propose some exciting ideas for expanding the concept of hybrid convolutions to improve their performance.
+
+INTRODUCTION:
+A face emotion recognition system comprises of two-step process i.e. face detection (bounded face) in image followed by emotion detection on the detected bounded face. The following two techniques are used for respective mentioned tasks in the face recognition system. 
+1. Haar feature-based cascade classifiers: It detects the frontal face in an image well. It is real-time and faster in comparison to other face detectors. This uses an implementation from Open-CV.
+2. CNN Model: We will train a classification CNN model architecture which takes bounded face (48*48 pixels) as input and predicts probabilities of 7 emotions in the output layer.
+
+DATA-SET:
+The data consists of 48×48 pixel grayscale images of faces. The faces have been automatically registered so that the face is more or less centered and occupies about the same amount of space in each image. The task is to categorize each face based on the emotion shown in the facial expression into one of seven categories (0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral).
+
+The training set consists of 35,888 examples. It contains two columns, “emotion” and “pixels”. The “emotion” column contains a numeric code ranging from 0 to 6, inclusive, for the emotion that is present in the image. The “pixels” column contains a string surrounded in quotes for each image. The contents of this string a space-separated pixel values in row-major order
+
+MODEL SUMMARY:
+
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_65 (Conv2D)           (None, 48, 48, 32)        320       
+_________________________________________________________________
+conv2d_66 (Conv2D)           (None, 48, 48, 32)        9248      
+_________________________________________________________________
+max_pooling2d_33 (MaxPooling (None, 24, 24, 32)        0         
+_________________________________________________________________
+conv2d_67 (Conv2D)           (None, 24, 24, 64)        18496     
+_________________________________________________________________
+conv2d_68 (Conv2D)           (None, 24, 24, 64)        36928     
+_________________________________________________________________
+max_pooling2d_34 (MaxPooling (None, 12, 12, 64)        0         
+_________________________________________________________________
+conv2d_69 (Conv2D)           (None, 12, 12, 96)        55392     
+_________________________________________________________________
+conv2d_70 (Conv2D)           (None, 10, 10, 96)        83040     
+_________________________________________________________________
+max_pooling2d_35 (MaxPooling (None, 5, 5, 96)          0         
+_________________________________________________________________
+conv2d_71 (Conv2D)           (None, 5, 5, 128)         110720    
+_________________________________________________________________
+conv2d_72 (Conv2D)           (None, 3, 3, 128)         147584    
+_________________________________________________________________
+max_pooling2d_36 (MaxPooling (None, 1, 1, 128)         0         
+_________________________________________________________________
+flatten_9 (Flatten)          (None, 128)               0         
+_________________________________________________________________
+dense_17 (Dense)             (None, 64)                8256      
+_________________________________________________________________
+dropout_9 (Dropout)          (None, 64)                0         
+_________________________________________________________________
+dense_18 (Dense)             (None, 7)                 455       
+=================================================================
+
+
+REAL TIME IMPLEMENTATION:
+In Real-time, the webcam recorded the video and detected the faces in the yellow box and extracted the facial landmarks with red dots. Then the vectors were calculated with red lines. The figure 5 shows the screenshot of the results with these facial landmarks and then predicting the emotion by the classification model.
+
+
+Different models we tried and the accuracy of those compared to the present model (56.9) More to be done.
+/*Accuracy of the dataset and as well as some images where the model got it right and some wrong*/
+
+REFERENCES:
+1. Liu, Kuang, Mingmin Zhang, and Zhigeng Pan. "Facial
+Expression Recognition with CNN Ensemble." Cyberworlds
+(CW), 2016 International Conference on. IEEE, 2016. 
+2. https://www.kaggle.com/c/challenges-inrepresentation-learning-facial-expression-recognition-challenge
+3. http://cs231n.github.io/convolutionalnetworks/ 
+4. Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton.
+"Imagenet classification with deep convolutional neural
+networks." Advances in neural information processing systems.
+2012. 
+
+
+CONCLUSION:
+Furthermore, evaluation metrics of FER-based approaches were introduced to provide standard
+metrics for comparison. Evaluation metrics have been widely evaluated in the field of recognition, and precision and recall are mainly used. However, a new evaluation method for recognizing consecutive facial expressions, or applying micro-expression recognition for moving images, should be proposed. Although studies on FER have been conducted over the past decade, in recent years the
+performance of FER has been significantly improved through a combination of deep-learning
+algorithms. Because FER is an important way to infuse emotion into machines, it is advantageous that various studies on its future application are being conducted. If emotional oriented deep-learning algorithms can be developed and combined with additional Internet-of-Things sensors in the
+future, it is expected that FER can improve its current recognition rate, including even spontaneous micro-expressions, to the same level as human beings.

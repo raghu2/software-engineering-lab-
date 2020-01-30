@@ -1,0 +1,7 @@
+18mcmt01 abc hyderabad 8 9
+18mcmt02 bcd secunderabad 6 7
+18mcmt03 cde telangana 7 8
+18mcmt04 def andhra 6 6
+18mcmt05 efg tamilnadu 8 8
+18mcmt06 fgh kerala 5 6
+18mcmt07 ghi karnataka 4 3
